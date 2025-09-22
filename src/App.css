@@ -3,8 +3,8 @@ body{
   padding: 0;
   margin: 0;
 }
-#main{
-  background-image: url(assets/background.png);
+#home{
+  background-image: url(assets/images/background.png);
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -17,35 +17,31 @@ body{
 }
 
 :root{
-  --azul-claro: #0ecced;
-  --azul-preto: #030820;
-  --azure: #025EC4;
-  --azul-medio: #043780;
-  --azul-escuro: #020764;
-
+  --azul-claro: 14, 204, 237;  /* #0ecced */
+  --azul-preto: 3, 8, 32;       /* #030820 */
+  --azure: 2, 94, 196;          /* #025EC4 */
+  --azul-medio: 4, 55, 128;     /* #043780 */
+  --azul-escuro: 2, 7, 100;     /* #020764 */
 }
 
-#homeText{
+#homeText {
   width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  >h1{
-    color: var(--azul-claro);
-    font-family: 'Black Future';
-    font-size: 350px;
-    text-align: center;
-    text-shadow: 
+}
+
+#homeText > h1 {
+  color: rgb(var(--azul-claro));
+  font-family: 'Black Future';
+  font-size: 350px;
+  text-align: center;
+  text-shadow: 
     0 0 5px #00dfff, 
     0 0 5px #00dfff, 
     0 0 7px #00dfff, 
     0 0 5px #00dfff,
     0 0 10px #00dfff;
-    
-
-  }
+  line-height: 80%;
 }
-
-
-

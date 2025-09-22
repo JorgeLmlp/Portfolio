@@ -1,10 +1,12 @@
-header{
-    position: fixed;
-    z-index: 99;
-    background-color: var(--azul-escuro); 
-    background-color: rgba(0, 0, 0, 0.3); 
-    width: 80%;
-    height: 6vh;
-    border-radius: 20px;
-    margin-top: 20px;
+
+.montserrat-uniquifier {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+a{
+    font-size: 20px ;
+    font-family: "Montserrat", sans-serif;
 }
