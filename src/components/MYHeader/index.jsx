@@ -1,5 +1,6 @@
 import './style.css'
 import settings from '../../assets/images/settings.png';
+import Download from './assets/images/Download.png';
 const MyHeader = () => {
   return (
     <header className="w-[90%] h-[6vh] flex align-center bg-[rgba(var(--azul-escuro),0.35)] rounded-lg fixed min-h-5 max-h-full mt-4">
@@ -9,7 +10,7 @@ const MyHeader = () => {
             <a href="" className='hover:text-white text-gray-500 transition duration-200'>ABOUT ME</a>
             <a href="" className='hover:text-white text-gray-500 transition duration-200'>COTACT</a>
             <a href="" className='hover:text-white text-gray-500 transition duration-200'>SKILLS</a>
-            <a id='CV' className='text-white ' href="">MY CV</a>
+            <a id='CV' className='text-white text-center p-3 w-[100px] bg-[rgb(var(--azul-escuro))] rounded-lg' href="">MY CV <img src=[Download] alt="" /></a>
         </div>
     </header>
   )
