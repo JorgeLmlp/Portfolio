@@ -13,7 +13,7 @@ function App() {
         <div id='homeText'>
             <h1>HELLO WORLD</h1>
         </div>
-          <div id='homeImage' className='absolute top-15'>
+          <div id='homeImage' className='absolute top-50'>
           <img src={homeImage} alt="" />
 
         </div>

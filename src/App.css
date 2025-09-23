@@ -13,7 +13,7 @@ body{
 }
 @font-face {
   font-family: "Black Future";
-  src: url("assets/Black Future.otf") format("opentype");
+  src: url("assets/Font/Black Future.otf") format("opentype");
 }
 
 :root{
