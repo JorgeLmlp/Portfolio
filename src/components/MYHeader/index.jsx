@@ -3,7 +3,7 @@ import settings from '../../assets/images/settings.png';
 import Download from '../../assets/images/Download.png';
 const MyHeader = () => {
   return (
-    <header className="w-[80%] h-[6vh] flex align-center bg-[rgba(var(--azul-escuro),0.35)] rounded-lg fixed min-h-max max-h-full mt-4 md:w-80%">
+    <header className="w-[80%] h-[6vh] flex align-center bg-[rgba(var(--azul-escuro),0.35)] rounded-lg fixed min-h-max max-h-full md:w-80%">
         <div className='flex w-[10%] items-center justify-end'><img className='w-10 h-10' src={settings} alt="" /></div>
         <div className='flex w-[90%] justify-center items-center xl:gap-2 md:gap-20'>
             <a href="" className='text-[25px] text-white p-[1px] bg-[rgba(var(--azure))] w-[200px] text-center rounded-xl'>HOME</a>
