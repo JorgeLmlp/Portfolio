@@ -1,5 +1,5 @@
 import './App.css';
-import MyHeader from './components/MyHeader'
+import MyHeader from './components/MyHeader';
 import homeImage from './assets/images/homeImage.png';
 
 

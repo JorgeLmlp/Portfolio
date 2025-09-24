@@ -3,6 +3,7 @@ body{
   padding: 0;
   margin: 0;
 }
+
 #home{
   background-image: url(assets/images/background.png);
   width: 100%;
@@ -35,7 +36,7 @@ body{
 #homeText > h1 {
   color: rgb(var(--azul-claro));
   font-family: 'Black Future';
-  font-size: 350px;
+  font-size: 310px;
   text-align: center;
   text-shadow: 
     0 0 5px #00dfff, 
