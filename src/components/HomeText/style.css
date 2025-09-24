@@ -1,0 +1,13 @@
+
+.blackfuture{
+    font-family: 'Black Future';
+    font-size: 300px;
+    text-align: center;
+    color: #025EC4;
+    text-shadow: 
+    0 0 5px #00dfff, 
+    0 0 5px #00dfff, 
+    0 0 7px #00dfff, 
+    0 0 5px #00dfff,
+    0 0 10px #00dfff;
+}

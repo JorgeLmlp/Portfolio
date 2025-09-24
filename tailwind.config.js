@@ -1,4 +1,3 @@
-// tailwind.config.js
 export default {
   content: [
     "./index.html",
@@ -13,7 +12,11 @@ export default {
       xl: '1920px',  // monitor principal
       '2xl': '2560px', // telas maiores (ultrawide/4K)
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        blackFuture: ["BlackFuture"],
+      },
+    },
   },
   plugins: [],
 }

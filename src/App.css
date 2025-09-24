@@ -11,6 +11,7 @@ body{
   background-size: cover;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 @font-face {
   font-family: "Black Future";
