@@ -1,14 +1,14 @@
-
 .montserrat-uniquifier {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
 }
 
-.headerbutton{
-  font-size: 20px;
+.headerbutton {
+    font-size: 20px;
 }
-.headerbuttonMD{
-  font-size: 15px;
+
+.headerbuttonMD {
+    font-size: 15px;
 }

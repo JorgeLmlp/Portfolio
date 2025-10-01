@@ -1,21 +1,57 @@
 import './style.css'
-import settings from '../../assets/images/settings.png';
 import Download from '../../assets/images/Download.png';
-import Config from './Config';
+import { SunIcon, MoonIcon } from '@radix-ui/react-icons';
+import { useState, useEffect } from 'react';
+
 const MyHeader = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Aplica ou remove a classe 'dark' no <html> ao mudar o checkbox
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      const container = document.getElementById('container')
+      container.style.backgroundColor = '[rgba(var(--azul-escuro),0.35)]'
+    } else {
+      document.documentElement.classList.remove('dark');
+      container.style.backgroundColor = '[rgba(var(--azul-escuro),0.35)]'
+    }
+  }, [darkMode]);
+
+  const handleCheckboxChange = (e) => {
+    setDarkMode(e.target.checked);
+  };
+
   return (
+    <header className="w-[80%] h-[6vh] flex justify-center items-center bg-[rgba(var(--azul-escuro),0.35)] rounded-lg fixed min-h-max max-h-full md:w-80%">
+      <div className='flex w-[60%] justify-center items-center xl:gap-5 md:gap-20'>
+        <a href="#" className='text-[20px] text-white p-[1px] w-[150px] text-center rounded-xl'>HOME</a>
+        <a href="#" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl'>ABOUT ME</a>
+        <a href="#" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl'>CONTACT</a>
+        <a href="#" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl mr-[5%]'>SKILLS</a>
       
-    <header className="w-[80%] h-[6vh] flex align-center bg-[rgba(var(--azul-escuro),0.35)] rounded-lg fixed min-h-max max-h-full md:w-80%">
-      <Config className = 'fixed'></Config>
-        <div className='flex w-[10%] items-center justify-end'><img className='w-10 h-10' src={settings} alt="" /></div>
-        <div className='flex w-[90%] justify-center items-center xl:gap-5 md:gap-20'>
-            <a href="" className='text-[25px] text-white p-[1px] bg-[rgba(var(--azure))] w-[150px] text-center rounded-xl'>HOME</a>
-            <a href="" className='text-[25px] hover:text-white hover:bg-[rgba(var(--azure),0.35)]   text-gray-500 transition duration-200 p-[1px] bg-[rgba(var(--azure))] w-[150px] text-center rounded-xl'>ABOUT ME</a>
-            <a href="" className='text-[25px] hover:text-white hover:bg-[rgba(var(--azure).0350)]  text-gray-500 transition duration-200 p-[1px] bg-[rgba(var(--azure))] w-[150px] text-center rounded-xl' >CONTACT</a>
-            <a href="" className='text-[25px] hover:text-white hover:bg-[rgba(var(--azure),o35)] text-gray-500 transition duration-200 p-[1px] bg-[rgba(var(--azure))] w-[150px] text-center rounded-xl mr-[5%]'>SKILLS</a>
-            <a id='CV' className='text-white justify-around flex bg-[rgba(var(--azure))] rounded-lg w-[140px] p-[6px]]' href="">MY CV<img className='ml-1' src={Download} alt="download" /></a>
-        </div>
+      <div className='w-[20%] flex items-end  justify-around'>
+
+      <div id='container' className='flex w-[28%] h-[80%] items-center justify-center border-white border-2 rounded-full'>
+          <input
+            id="checkbox"
+            type="checkbox"
+            checked={darkMode}
+            onChange={handleCheckboxChange}
+            className="absolute opacity-0 w-[30px] h-full z-10 cursor-pointer"
+            />
+          <span className="relative inset-0 flex items-center justify-center text-white pointer-events-none z-9">
+            {darkMode ? <SunIcon className="text-white-100 w-[30px] h-[40px]" /> : <MoonIcon className="text-white-100 w-[30px] h-[40px]" />}
+          </span>
+        
+      </div>
+      </div>
+        <a id='CV' className='text-white justify-around flex bg-[rgba(var(--azure))] rounded-lg w-[140px] p-[6px]' href="#">
+          MY CV <img className='ml-1' src={Download} alt="download" />
+        </a>
+            </div>
     </header>
-  )
-}
+  );
+};
+
 export default MyHeader;

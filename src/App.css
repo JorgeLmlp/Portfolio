@@ -1,49 +1,51 @@
-body{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-#home{
-  background-image: url(assets/images/background.png);
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  position: relative;
+#home {
+    background-image: url(assets/images/background.png);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-direction: row;
 }
+
 @font-face {
-  font-family: "Black Future";
-  src: url("assets/Font/Black Future.otf") format("opentype");
+    font-family: "Black Future";
+    src: url("assets/Font/Black Future.otf") format("opentype");
 }
 
-:root{
-  --azul-claro: 14, 204, 237;  /* #0ecced */
-  --azul-preto: 3, 8, 32;       /* #030820 */
-  --azure: 2, 94, 196;          /* #025EC4 */
-  --azul-medio: 4, 55, 128;     /* #043780 */
-  --azul-escuro: 2, 7, 100;     /* #020764 */
+:root {
+    --azul-claro: 14, 204, 237;
+    /* #0ecced */
+    --azul-preto: 3, 8, 32;
+    /* #030820 */
+    --azure: 2, 94, 196;
+    /* #025EC4 */
+    --azul-medio: 4, 55, 128;
+    /* #043780 */
+    --azul-escuro: 2, 7, 100;
+    /* #020764 */
 }
 
 #homeText {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#homeText > h1 {
-  color: rgb(var(--azul-claro));
-  font-family: 'Black Future';
-  font-size: 310px;
-  text-align: center;
-  text-shadow: 
-    0 0 5px #00dfff, 
-    0 0 5px #00dfff, 
-    0 0 7px #00dfff, 
-    0 0 5px #00dfff,
-    0 0 10px #00dfff;
-  line-height: 80%;
+#homeText>h1 {
+    color: rgb(var(--azul-claro));
+    font-family: 'Black Future';
+    font-size: 310px;
+    text-align: center;
+    text-shadow: 0 0 5px #00dfff, 0 0 5px #00dfff, 0 0 7px #00dfff, 0 0 5px #00dfff, 0 0 10px #00dfff;
+    line-height: 80%;
 }

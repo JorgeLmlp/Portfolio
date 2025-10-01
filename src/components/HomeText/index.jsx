@@ -3,9 +3,9 @@ import './style.css'
 
 const HomeText = () => {
   return (
-    <div className="w-[70%] h-[50%] flex align-middle justify-center relative top-[10%]">
+    <div className="w-[70%] h-[40%] flex align-middle justify-center relative top-[10%]">
       <TextType 
-        text={["HELLO WORLD!", "MY NAME IS JORGE"]}
+        text={["HELLO WORLD!"]}
         typingSpeed={180}
         deletingSpeed={120}
         pauseDuration={1000}

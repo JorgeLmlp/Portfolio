@@ -1,23 +1,20 @@
 import './App.css';
-import MyHeader from './components/MyHeader';
-
-import homeImage from './assets/images/homeImage.png';
+import MyHeader from './components/MYHeader';
+import homeImage from './assets/images/homeimage.png';
 import HomeText from './components/HomeText';
-import LiquidChrome from './components/background';
 
 
 
 function App() {
 
   return (
-
+    
     <div id='main'>
       <div id='home'>
         <MyHeader></MyHeader>
         <HomeText></HomeText>
           <div id='homeImage' className='absolute top-50'>
-          <img src={homeImage} alt="" />
-
+          <img className='z-00' src= {homeImage}></img>
         </div>
         <div className='homeid'>
             
@@ -26,6 +23,5 @@ function App() {
     </div>
   )
 }
-
 
 export default App
