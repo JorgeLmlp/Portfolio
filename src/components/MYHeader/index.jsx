@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 const MyHeader = () => {
   const [darkMode, setDarkMode] = useState(false);
 
-  // Aplica ou remove a classe 'dark' no <html> ao mudar o checkbox
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -23,7 +23,7 @@ const MyHeader = () => {
   };
 
   return (
-    <header className="w-[80%] h-[6vh] flex justify-center items-center bg-[rgba(var(--azul-escuro),0.35)] rounded-lg fixed min-h-max max-h-full md:w-80%">
+    <header className="w-[80%] h-[6vh] flex justify-center items-center bg-[rgba(var(--azul-escuro),0.35)] rounded-lg fixed min-h-max max-h-full md:w-80% z-999">
       <div className='flex w-[60%] justify-center items-center xl:gap-5 md:gap-20'>
         <a href="#" className='text-[20px] text-white p-[1px] w-[150px] text-center rounded-xl'>HOME</a>
         <a href="#" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl'>ABOUT ME</a>
