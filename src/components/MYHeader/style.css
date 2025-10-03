@@ -12,3 +12,24 @@
 .headerbuttonMD {
     font-size: 15px;
 }
+@media (max-width: 1400px) {
+    .headerbutton {
+        font-size: 15px;
+    }
+
+    .btnHead {
+        font-size: 15px;
+    }
+    .ModeIcon {
+        width: 23px;
+        height: 35px;
+    }
+    .ModeContainer{
+        width: 50%;
+        height: 80%;
+    }
+    .DownloadCV{
+        width: 200px;
+        font-size: 14px;
+    }
+}

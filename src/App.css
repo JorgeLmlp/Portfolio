@@ -49,3 +49,11 @@ body {
     text-shadow: 0 0 5px #00dfff, 0 0 5px #00dfff, 0 0 7px #00dfff, 0 0 5px #00dfff, 0 0 10px #00dfff;
     line-height: 80%;
 }
+@media (max-width:1366px){
+    .homeImage{
+        width: 75%;
+    }
+    .HomeImageContainer{
+        top: 25%;
+    }
+}

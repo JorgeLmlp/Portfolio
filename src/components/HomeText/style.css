@@ -3,5 +3,12 @@
     font-size: 290px;
     text-align: center;
     color: #025EC4;
+    position: relative;
     text-shadow: 0 0 5px #00dfff, 0 0 5px #00dfff, 0 0 7px #00dfff, 0 0 5px #00dfff, 0 0 10px #00dfff;
+}
+@media (max-width: 1366px) {
+    .blackfuture {
+        font-size: 220px;
+        bottom: 14%;
+    }
 }

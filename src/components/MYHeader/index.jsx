@@ -32,7 +32,7 @@ const MyHeader = () => {
       
       <div className='w-[20%] flex items-end  justify-around'>
 
-      <div id='container' className='flex w-[28%] h-[80%] items-center justify-center border-white border-2 rounded-full'>
+      <div id='container' className='ModeContainer flex w-[28%] h-[80%] items-center justify-center border-white border-2 rounded-full'>
           <input
             id="checkbox"
             type="checkbox"
@@ -41,13 +41,13 @@ const MyHeader = () => {
             className="absolute opacity-0 w-[30px] h-full z-10 cursor-pointer"
             />
           <span className="relative inset-0 flex items-center justify-center text-white pointer-events-none z-9">
-            {darkMode ? <SunIcon className="text-white-100 w-[30px] h-[40px]" /> : <MoonIcon className="text-white-100 w-[30px] h-[40px]" />}
+            {darkMode ? <SunIcon className="ModeIcon text-white-100 w-[30px] h-[40px]" /> : <MoonIcon className="ModeIcon text-white-100 w-[30px] h-[40px]" />}
           </span>
         
       </div>
       </div>
-        <a id='CV' className='text-white justify-around flex bg-[rgba(var(--azure))] rounded-lg w-[140px] p-[6px]' href="#">
-          MY CV <img className='ml-1' src={Download} alt="download" />
+        <a id='CV' className='DownloadCV text-white justify-around flex bg-[rgba(var(--azure))] rounded-lg w-[140px] p-[6px]' href="#">
+          MY CV <img className='CVimg ml-1' src={Download} alt="download" />
         </a>
             </div>
     </header>

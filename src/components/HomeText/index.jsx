@@ -3,7 +3,7 @@ import './style.css'
 
 const HomeText = () => {
   return (
-    <div className="w-[70%] h-[40%] flex align-middle justify-center relative top-[10%]">
+    <div className="w-[70%] h-[40%] flex align-center justify-center relative">
       <TextType 
         text={["HELLO WORLD!"]}
         typingSpeed={180}
