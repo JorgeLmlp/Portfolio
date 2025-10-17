@@ -11,10 +11,11 @@ const MyHeader = () => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
       const container = document.getElementById('container')
-      container.style.backgroundColor = '[rgba(var(--azul-escuro),0.35)]'
+      container.style.backgroundColor = 'rgba(var(--azul-escuro),0.35)'
     } else {
+      const container = document.getElementById('container')
       document.documentElement.classList.remove('dark');
-      container.style.backgroundColor = '[rgba(var(--azul-escuro),0.35)]'
+      container.style.backgroundColor = 'rgba(var(--azul-escuro),0.35)'
     }
   }, [darkMode]);
 
@@ -23,16 +24,16 @@ const MyHeader = () => {
   };
 
   return (
-    <header className="w-[80%] h-[6vh] flex justify-center items-center bg-[rgba(var(--azul-escuro),0.35)] rounded-lg fixed min-h-max max-h-full md:w-80% z-999">
+    <header className="w-[80%] h-[6vh] flex justify-center items-center bg-[rgba(var(--azul-escuro),0.35)] rounded-lg min-h-max max-h-full md:w-80% z-999 fixed m-auto">
       <div className='flex w-[60%] justify-center items-center xl:gap-5 md:gap-20'>
         <a href="#" className='text-[20px] text-white p-[1px] w-[150px] text-center rounded-xl'>HOME</a>
         <a href="#" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl'>ABOUT ME</a>
-        <a href="#" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl'>CONTACT</a>
         <a href="#" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl mr-[5%]'>SKILLS</a>
+        <a href="mailto:jorgelmlp2@gmail.com" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl'>CONTACT</a>
       
       <div className='w-[20%] flex items-end  justify-around'>
 
-      <div id='container' className='ModeContainer flex w-[28%] h-[80%] items-center justify-center border-white border-2 rounded-full'>
+      <div id='container' className='ModeContainer flex w-[34%] h-[80%] items-center justify-center border-white border-2 rounded-full'>
           <input
             id="checkbox"
             type="checkbox"
@@ -46,7 +47,7 @@ const MyHeader = () => {
         
       </div>
       </div>
-        <a id='CV' className='DownloadCV text-white justify-around flex bg-[rgba(var(--azure))] rounded-lg w-[140px] p-[6px]' href="#">
+        <a id='CV' className='DownloadCV text-white justify-around flex bg-[rgba(var(--azure),1)] rounded-lg w-[140px] p-[6px]' href="#">
           MY CV <img className='CVimg ml-1' src={Download} alt="download" />
         </a>
             </div>

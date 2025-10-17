@@ -33,22 +33,6 @@ body {
     /* #020764 */
 }
 
-#homeText {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#homeText>h1 {
-    color: rgb(var(--azul-claro));
-    font-family: 'Black Future';
-    font-size: 310px;
-    text-align: center;
-    text-shadow: 0 0 5px #00dfff, 0 0 5px #00dfff, 0 0 7px #00dfff, 0 0 5px #00dfff, 0 0 10px #00dfff;
-    line-height: 80%;
-}
 @media (max-width:1366px){
     .homeImage{
         width: 75%;
@@ -56,4 +40,11 @@ body {
     .HomeImageContainer{
         top: 25%;
     }
+}
+
+#page2Title{
+    font-family: 'Black Future', sans-serif;
+    font-size: 200px;
+    color: white;
+    text-align: center;
 }
