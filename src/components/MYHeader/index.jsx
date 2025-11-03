@@ -24,11 +24,11 @@ const MyHeader = () => {
   };
 
   return (
-    <header className="w-[80%] h-[6vh] flex justify-center items-center bg-[rgba(var(--azul-escuro),1)] rounded-lg min-h-max max-h-full md:w-80% z-999 fixed m-auto">
-      <div className='flex w-[60%] justify-center items-center xl:gap-5 md:gap-20'>
+    <header className="w-[80%] P-[20%] h-[6vh] flex justify-center items-center bg-[rgba(var(--azul-escuro),1)] rounded-lg min-h-max max-h-full md:w-80% z-999 fixed m-auto">
+      <div className='flex w-[60%] justify-center items-center xl:gap-5 md:gap-0'>
         <a href="#" className='text-[20px] text-white p-[1px] w-[150px] text-center rounded-xl'>HOME</a>
         <a href="#" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl'>ABOUT ME</a>
-        <a href="#" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl mr-[5%]'>SKILLS</a>
+        <a href="#" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl '>SKILLS</a>
         <a href="mailto:jorgelmlp2@gmail.com" className='text-[20px] hover:text-white text-gray-500 transition duration-200 p-[1px] w-[150px] text-center rounded-xl'>CONTACT</a>
       
       <div className='w-[20%] flex items-end  justify-around'>

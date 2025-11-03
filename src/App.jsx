@@ -20,17 +20,19 @@ function App() {
       <div id='home' className='homeContainer'>
         <MyHeader />
         <HomeText />  
-        <div id='homeImage' className='absolute top-55 flex justify-center w-full h-full'>
+        <div id='homeImage' className='absolute top-55 flex align-middle justify-center w-full h-full'>
           <img className='z-00 h-[80%]' src={homeImage} alt='home' />
         </div>
         <FooterHome />
       </div>
-      <div id='page2' className=' w-full h-[100vh] flex justify-center items-center' style={page2Style}>
-        <div id='page2Container'className='bg-gradient-to-b from-[rgb(var(--azul-medio))] to-[rgb(var(--azure))] w-[100%] h-full '>
+      <div id='page2' className=' w-[100%] h-[100vh] flex justify-center  ' style={page2Style}>
+        <div id='page2Container'className='bg-gradient-to-b from-[rgb(var(--azul-medio))] to-[rgb(var(--azure))] w-[100%] h-full align-middle flex justify-center items-center '>
+          <div className='w-[65%] flex items-center  mr-18 justify-center align-middle h-[40vh]'>
           <Page2Title></Page2Title>
+          </div>
         </div>
       </div>
-      <div id='page3' className='w-full h-[100vh] flex justify-center items-center bg-[rgba(var(--azure),1)]'>
+      <div id='page3' className='p-[20%] h-[100vh] flex justify-center items-center bg-[rgba(var(--azure),1)]'>
           <Skills></Skills>
        </div>
     </div>

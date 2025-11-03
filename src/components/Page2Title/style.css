@@ -1,8 +1,9 @@
 .blackfuture1 {
     font-family: 'Black Future';
-    font-size: 150px;
+    font-size: 160px;
     text-align: center;
     color: hsl(189, 89%, 49%);
     position: relative;
+    margin-right: 5%;
     text-shadow: 0 0 5px #00dfff, 0 0 5px #00dfff, 0 0 7px #00dfff, 0 0 5px #00dfff, 0 0 10px #00dfff;
 }
