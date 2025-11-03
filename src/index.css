@@ -39,14 +39,23 @@
     --color-sidebar-ring: var(--sidebar-ring);
 }
 
-:root{
-
+:root {
+    --azul-claro: 14, 204, 237;
+    /* #0ecced */
+    --azul-preto: 3, 8, 32;
+    /* #030820 */
+    --azure: 2, 94, 196;
+    /* #025EC4 */
+    --azul-medio: 4, 55, 128;
+    /* #043780 */
+    --azul-escuro: 2, 7, 100;
+    /* #020764 */
 }
 
 .dark {
-   background-color: rgba(var(--azul-escuro),1);
-   color: white
-    
+  >#home{
+    background-image: url(https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/04/homem-aranha-tobey-tom-andrew.jpg?w=1200&h=900&crop=0)
+  }
 }
 
 @layer base {
