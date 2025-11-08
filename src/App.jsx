@@ -5,6 +5,8 @@ import HomeText from './components/HomeText';
 import { FooterHome } from './components/FooterHome';
 import { Skills } from './components/Skills';
 import { Page2Title } from './components/Page2Title';
+import { AboutText } from './components/TextReveal';
+import ScrollFloat from './assets/animations/ScrollFloat/ScrollFloat';
 
 
 
@@ -25,16 +27,24 @@ function App() {
         </div>
         <FooterHome />
       </div>
-      <div id='page2' className=' w-[100%] h-[100vh] flex justify-center  ' style={page2Style}>
-        <div id='page2Container'className='bg-gradient-to-b from-[rgb(var(--azul-medio))] to-[rgb(var(--azure))] w-[100%] h-full align-middle flex justify-center items-center '>
-          <div className='w-[65%] flex items-center  mr-18 justify-center align-middle h-[40vh]'>
+      <div id='page2' className=' w-full h-[200vh] flex justify-center ' style={page2Style}>
+        <div id='page2Container'className='bg-gradient-to-b from-[rgb(var(--azul-medio))] to-[rgb(var(--azure))] w-[100%] h-full align-middle flex flex-col justify-center items-center '>
+          <div className='w-full flex items-center   justify-center align-middle'>
           <Page2Title></Page2Title>
+          
           </div>
+          <ScrollFloat></ScrollFloat>
+          <AboutText></AboutText>
         </div>
       </div>
-      <div id='page3' className='p-[20%] h-[100vh] flex justify-center items-center bg-[rgba(var(--azure),1)]'>
-          <Skills></Skills>
+
+      <div id='page3' className='p-[20%]w-[100%] h-[100vh] flex justify-center items-center bg-[rgba(var(--azure),1)]'>
+        <div id='page4'>
+        <Skills></Skills>
+        </div>
+
        </div>
+       
     </div>
   
 

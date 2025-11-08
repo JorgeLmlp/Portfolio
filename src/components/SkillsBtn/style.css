@@ -1,9 +1,9 @@
 .animationbtn:hover{
-transform: scale(1.05);
+transform: scale(1.01);
 opacity: 0.9;
 transition: all 0.5s ease-in-out;
     >h4{
-        font-size: 25px;
+        font-size: 30px;
         transition: all 0.4s ease-in-out;
         color: rgb(var(--azure));
         

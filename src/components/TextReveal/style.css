@@ -1,0 +1,8 @@
+.blackfutureReveal {
+    font-family: 'Black Future';
+    font-size: 100px;
+    text-align: center;
+    color: hsl(189, 89%, 49%);
+    position: relative;
+    margin-right: 5%;
+}

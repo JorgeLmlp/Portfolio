@@ -3,7 +3,7 @@
 
   export const Page2Title = () => {
       return (
-          <div id='page2Title' className='blackfuture1 w-[100%] h-[30vh] flex cursor-default align-middle justify-center items-center text-center'>
+          <div id='page2Title' className='blackfuture1 w-full h-[30vh] flex cursor-default align-middle justify-center items-center text-center'>
             <DecryptedText
             text =" Jorge"
             speed={200}
@@ -16,3 +16,4 @@
             />
           </div> 
         )}
+

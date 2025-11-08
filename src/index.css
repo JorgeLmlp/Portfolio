@@ -1,3 +1,7 @@
+body{
+    scroll-behavior: smooth;
+}
+
 @import 'tailwindcss';
 @import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));
@@ -50,13 +54,10 @@
     /* #043780 */
     --azul-escuro: 2, 7, 100;
     /* #020764 */
+    --texto: 255,255,255;
 }
 
-.dark {
-  >#home{
-    background-image: url(https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/04/homem-aranha-tobey-tom-andrew.jpg?w=1200&h=900&crop=0)
-  }
-}
+
 
 @layer base {
     * {
