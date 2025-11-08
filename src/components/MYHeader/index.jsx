@@ -47,7 +47,7 @@ const MyHeader = () => {
         
       </div>
       </div>
-        <a id='CV' className='DownloadCV text-white justify-around flex bg-[rgba(var(--azure),1)] rounded-lg w-[140px] p-1.5' href="#">
+        <a id='CV' className='DownloadCV text-white justify-around flex bg-[rgba(var(--azure),1)] rounded-lg w-[140px] p-1.5' href="../../assets/files/CV_Jorge_Lima.pdf" download = "CV_Jorge_Lima.pdf">
           MY CV <img className='CVimg ml-1' src={Download} alt="download" />
         </a>
             </div>
