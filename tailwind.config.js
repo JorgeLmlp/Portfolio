@@ -9,7 +9,7 @@ export default {
             xs: '480px', // small phones
             sm: '640px', // tablets
             md: '768px', // large tablets / small laptops
-            lg: '1366px', // secondary monitor
+            lg: '1280px', // secondary monitor
             xl: '1920px', // primary monitor
             '2xl': '2560px', // ultrawide / 4K
         },

@@ -6,7 +6,7 @@ import './style.css';
 export const AboutText = () => {
     return (
 
-        <section className=" text-white flex items-center flex-col justify-center w-[80%] h-[20vh]">
+        <section className=" text-white flex items-center flex-col justify-center w-[70%] h-[10vh] mt-40">
             <div className="w-max h-[20vh] blackfutureReveal ">
                 <ScrollFloat
                     animationDuration={1}

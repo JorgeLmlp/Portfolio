@@ -24,12 +24,12 @@ const MyHeader = () => {
   };
 
   return (
-    <header className="w-[80%] P-[20%] h-[6vh] flex justify-center items-center bg-[rgba(var(--azul-escuro),1)] rounded-lg min-h-max max-h-full md:w-80% fixed z-999 m-auto">
-      <div className='flex w-[60%] justify-center items-center xl:gap-5 md:gap-0'>
-        <a href="#" className='text-gray-500 text-[20px] hover:text-[rgba(var(--texto),1)] p-px w-[150px] text-center rounded-xl'>HOME</a>
-        <a href="#page2" className='text-[20px] hover:text-[rgba(var(--texto),1)] text-gray-500 transition duration-200 p-px w-[150px] text-center rounded-xl'>ABOUT ME</a>
-        <a href="#page4" className='text-[20px] hover:text-[rgba(var(--texto),1)] text-gray-500 transition duration-200 p-px w-[150px] text-center rounded-xl '>SKILLS</a>
-        <a href="mailto:jorgelmlp2@gmail.com" className='text-[20px] hover:text-[rgba(var(--texto),1)] text-gray-500 transition duration-200 p-px w-[150px] text-center rounded-xl'>CONTACT</a>
+    <header className="header w-[80%] P-[20%] h-[6vh] flex justify-center items-center bg-[rgba(var(--azul-escuro),1)] rounded-lg min-h-max max-h-full lg:w-80% fixed z-999 m-auto">
+      <div className='flex w-[60%] lg:text-[17px] justify-arround items-center xl:gap-5 md:gap-0'>
+        <a href="#" className='text-gray-500 lg:text-[17px] text-[20px] hover:text-[rgba(var(--texto),1)] p-px w-[150px] text-center rounded-xl'>HOME</a>
+        <a href="#page2" className='text-[20px] md:text-[17px] hover:text-[rgba(var(--texto),1)] text-gray-500 transition duration-200 p-px w-[150px] text-center rounded-xl'>ABOUT ME</a>
+        <a href="#page4" className='text-[20px] lg:text-[17px] hover:text-[rgba(var(--texto),1)] text-gray-500 transition duration-200 p-px w-[150px] text-center rounded-xl '>SKILLS</a>
+        <a href="mailto:jorgelmlp2@gmail.com" className='text-[17px] hover:text-[rgba(var(--texto),1)] text-gray-500 transition duration-200 p-px w-[150px] text-center rounded-xl'>CONTACT</a>
       
       <div className='w-[20%] flex items-end  justify-around'>
 

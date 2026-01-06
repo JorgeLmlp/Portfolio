@@ -22,14 +22,14 @@ function App() {
       <div id='home' className='homeContainer'>
         <MyHeader />
         <HomeText />  
-        <div id='homeImage' className='absolute top-55 flex align-middle justify-center w-full h-full'>
+        <div id='homeImage' className='absolute imagemhome flex align-middle justify-center w-full h-full'>
           <img className='z-00 h-[80%]' src={homeImage} alt='home' />
         </div>
         <FooterHome />
       </div>
       <div id='page2' className=' w-full h-[200vh] flex justify-center ' style={page2Style}>
-        <div id='page2Container'className='bg-gradient-to-b from-[rgb(var(--azul-medio))] to-[rgb(var(--azure))] w-[100%] h-full align-middle flex flex-col justify-center items-center '>
-          <div className='w-full flex items-center   justify-center align-middle'>
+        <div id='page2Container'className='bg-gradient-to-b from-[rgb(var(--azul-medio))] to-[rgb(var(--azure))] w-[100%] h-full align-middle flex flex-col  items-center '>
+          <div className='w-full flex items-center justify-center align-middle'>
           <Page2Title></Page2Title>
           
           </div>
@@ -38,7 +38,7 @@ function App() {
         </div>
       </div>
 
-      <div id='page3' className='p-[20%]w-[100%] h-[100vh] flex justify-center items-center bg-[rgba(var(--azure),1)]'>
+      <div id='page3' className='p-[20%]w-[100%] h-screen flex justify-center  bg-[rgba(var(--azure),1)]'>
         <div id='page4'>
         <Skills></Skills>
         </div>
