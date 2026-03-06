@@ -12,7 +12,9 @@ import ScrollFloat from './assets/animations/ScrollFloat/ScrollFloat';
 
 
 function App() {
-
+  <Suspense fallback={<div>Loading...</div>}>
+  <ScrollFloat />
+</Suspense>
   const page2Style = {
     background: 'linear-gradient(180deg, rgb(var(--azul-medio)) 0%, rgb(var(--azure)) 100%)',
   };
