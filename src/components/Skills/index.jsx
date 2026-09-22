@@ -1,27 +1,53 @@
+import "./style.css";
+import { SkillsBtn } from "../SkillsBtn";
+import { TargetCursor } from "../TargetCursor";
+import { useLanguage } from "../../context/languageContext";
 
-import './style.css';
-import { SkillsBtn } from '../SkillsBtn';
+const skills = [
+  ["Node.js", "backend", "ND"],
+  ["Express.js", "backend", "EXP"],
+  ["Flask", "backend", "FLASK"],
+  ["Python", "language", "PY"],
+  ["MySQL", "database", "SQL"],
+  ["C#", "language", "C#"],
+  ["Pandas", "dataAnalysis", "PD"],
+  ["JavaScript", "language", "JS"],
+  ["React", "frontend", "RE"],
+  ["Swift", "mobile", "SWF"],
+  ["Kotlin", "mobile", "KT"],
+  ["Flutter", "mobile", "FLT"],
+  ["Vite", "tooling", "VI"],
+  ["Git", "versioning", "GT"],
+  ["TypeScript", "language", "TS"],
+  ["Javascript", "language", "JS"],
+];
+
 export const Skills = () => {
-    return (
-        <div className='flex flex-col justify-center items-center bg-[rgb(var(--azure))] w-full h-full p-10'>
-        <div className='w-[25%] border-b-5 border-[rgb(var(--azul-claro))]'><h3 className='border-b-var(rgb(--azure) blackfuture3 mr-3 text-[100px]'>SKILLS</h3></div>
-        <div className="w-full h-[30vh] jusotify-items-center grid gap-y-0 gap-x-0 grid-wrap grid-rws-3 grid-cols-4">
-            <SkillsBtn text= 'HTML5'/>
-            <SkillsBtn text = 'CSS3'/>
-            <SkillsBtn text = 'TAILWINDCSS'/>
-            <SkillsBtn text = 'JAVASCRiPT'/>
-            <SkillsBtn text = 'REACT'/>
-            <SkillsBtn text = 'VITE'/>
-            <SkillsBtn text = 'GIT'/>
-            <SkillsBtn text = 'NODEJS'/>
-            <SkillsBtn text = 'DJANGO'/>
-            <SkillsBtn text = 'PYTHON'/>
-            <SkillsBtn text = 'C#'/>
-            <SkillsBtn text = 'MySQL'/>
+  const { copy } = useLanguage();
+  const content = copy.skills;
 
-                
-        </div>
-        </div>
-
-    );
-}
+  return (
+    <div className="skills-panel">
+      <TargetCursor
+        scopeSelector=".skills-section"
+        targetSelector=".skill-card.cursor-target"
+      />
+      <div className="skills-heading">
+        <span className="skills-eyebrow">{content.kicker}</span>
+        <h3 className="blackfuture3">{content.title}</h3>
+        <p>{content.description}</p>
+      </div>
+      <div className="skills-grid">
+        {skills.map(([text, category, symbol], index) => (
+          <SkillsBtn
+            key={text}
+            text={text}
+            category={content.categories[category]}
+            symbol={symbol}
+            index={index}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};

@@ -1,0 +1,34 @@
+.home-socials {
+  position: absolute;
+  z-index: 5;
+  right: clamp(1.25rem, 6vw, 6rem);
+  bottom: clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  gap: 0.75rem;
+}
+
+.home-socials a {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  background: rgba(2, 16, 52, 0.34);
+  color: white;
+  backdrop-filter: blur(12px);
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease,
+    transform 200ms ease;
+}
+
+.home-socials a:hover {
+  border-color: rgba(var(--azul-claro), 0.9);
+  background: rgba(var(--azure), 0.55);
+  transform: translateY(-3px);
+}
+.home-socials svg {
+  width: 19px;
+  height: 19px;
+}

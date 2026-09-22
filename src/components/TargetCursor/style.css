@@ -1,0 +1,126 @@
+.skills-target-cursor {
+  position: fixed;
+  z-index: 2147483647;
+  inset: 0;
+  pointer-events: none;
+}
+
+.skills-cursor-dot,
+.skills-cursor-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  will-change: transform, width, height;
+}
+
+.skills-cursor-dot {
+  width: 16px;
+  height: 16px;
+  filter: drop-shadow(0 0 4px rgba(var(--target-cursor), 0.65));
+}
+
+.skills-cursor-dot::before,
+.skills-cursor-dot::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  background: rgb(var(--target-cursor));
+  transform: translate(-50%, -50%);
+}
+
+.skills-cursor-dot::before {
+  width: 16px;
+  height: 2px;
+}
+
+.skills-cursor-dot::after {
+  width: 2px;
+  height: 16px;
+}
+
+.skills-cursor-frame {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(var(--target-cursor), 0.26);
+  border-radius: 2px;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.skills-cursor-frame.is-locked {
+  border-color: rgba(var(--target-cursor), 0.52);
+  background: rgba(var(--target-cursor), 0.035);
+}
+
+.skills-cursor-rotator {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+.skills-cursor-label {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  padding: 0.42rem 0.65rem;
+  border: 1px solid rgba(var(--target-cursor), 0.72);
+  border-radius: 8px;
+  background: rgba(var(--target-label-background), 0.94);
+  box-shadow: 0 8px 24px rgba(var(--target-cursor), 0.2);
+  color: rgb(var(--target-cursor));
+  font: 750 0.62rem/1 sans-serif;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  text-transform: uppercase;
+  transform: translate(-50%, 6px);
+  transition:
+    opacity 160ms ease,
+    transform 220ms ease;
+  white-space: nowrap;
+}
+
+.skills-cursor-frame.is-locked .skills-cursor-label {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.cursor-corner {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border: 3px solid rgb(var(--target-cursor));
+  filter: drop-shadow(0 0 4px rgba(var(--target-cursor), 0.5));
+}
+
+.corner-top-left {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+.corner-top-right {
+  top: 0;
+  right: 0;
+  border-bottom: 0;
+  border-left: 0;
+}
+.corner-bottom-right {
+  right: 0;
+  bottom: 0;
+  border-top: 0;
+  border-left: 0;
+}
+.corner-bottom-left {
+  bottom: 0;
+  left: 0;
+  border-top: 0;
+  border-right: 0;
+}
+
+.skills-section.skills-cursor-active,
+.skills-section.skills-cursor-active * {
+  cursor: none !important;
+}

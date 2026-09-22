@@ -1,70 +1,92 @@
-body{
-    scroll-behavior: smooth;
-}
-
-@import 'tailwindcss';
-@import "tw-animate-css";
-@custom-variant dark (&:is(.dark *));
-@theme inline {
-    --radius-sm: calc(var(--radius) - 4px);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) + 4px);
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-destructive: var(--destructive);
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
-    --color-chart-1: var(--chart-1);
-    --color-chart-2: var(--chart-2);
-    --color-chart-3: var(--chart-3);
-    --color-chart-4: var(--chart-4);
-    --color-chart-5: var(--chart-5);
-    --color-sidebar: var(--sidebar);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-ring: var(--sidebar-ring);
-}
+@import "tailwindcss";
 
 :root {
-    --azul-claro: 14, 204, 237;
-    /* #0ecced */
-    --azul-preto: 3, 8, 32;
-    /* #030820 */
-    --azure: 2, 94, 196;
-    /* #025EC4 */
-    --azul-medio: 4, 55, 128;
-    /* #043780 */
-    --azul-escuro: 2, 7, 100;
-    /* #020764 */
-    --texto: 255,255,255;
+  --azul-claro: 0, 74, 153;
+  --azul-preto: 3, 8, 32;
+  --azure: 0, 58, 135;
+  --azul-medio: 4, 55, 128;
+  --azul-escuro: 2, 7, 100;
+  --texto: 5, 20, 42;
+  --muted-text: 29, 47, 68;
+  --page-background: 244, 248, 252;
+  --skills-background: 228, 238, 247;
+  --section-start: 198, 224, 245;
+  --section-end: 246, 249, 252;
+  --home-overlay-top: 225, 240, 252;
+  --home-overlay-bottom: 182, 220, 246;
+  --home-overlay-top-alpha: 0.78;
+  --home-overlay-bottom-alpha: 0.94;
+  --home-title: 0, 53, 120;
+  --home-name: 0, 28, 72;
+  --home-name-glow: 0, 52, 156;
+  --portrait-surface: 214, 233, 249;
+  --portrait-ring: 0, 74, 153;
+  --portrait-subject-filter: none;
+  --header-background: 250, 252, 255;
+  --header-border: 105, 143, 179;
+  --control-background: 255, 255, 255;
+  --card-background: 255, 255, 255;
+  --card-border: 103, 143, 180;
+  --card-shadow: 28, 70, 112;
+  --footer-background: 8, 25, 48;
+  --footer-text: 244, 249, 255;
+  --footer-muted: 166, 188, 211;
+  --footer-accent: 88, 211, 255;
+  --target-cursor: 0, 72, 158;
+  --target-label-background: 248, 252, 255;
 }
 
-
-
-@layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
+.dark {
+  --azul-claro: 14, 204, 237;
+  --azure: 2, 94, 196;
+  --texto: 242, 249, 255;
+  --muted-text: 160, 180, 205;
+  --page-background: 3, 8, 32;
+  --skills-background: 3, 13, 42;
+  --section-start: 4, 55, 128;
+  --section-end: 2, 25, 68;
+  --home-overlay-top: 3, 8, 32;
+  --home-overlay-bottom: 3, 8, 32;
+  --home-overlay-top-alpha: 0.28;
+  --home-overlay-bottom-alpha: 0.82;
+  --home-title: 14, 204, 237;
+  --home-name: 3, 88, 142;
+  --home-name-glow: 0, 67, 190;
+  --portrait-surface: 4, 55, 128;
+  --portrait-ring: 14, 204, 237;
+  --portrait-subject-filter: grayscale(0.72) brightness(0.82) contrast(1.06);
+  --header-background: 3, 12, 39;
+  --header-border: 66, 121, 180;
+  --control-background: 12, 35, 72;
+  --card-background: 8, 27, 61;
+  --card-border: 51, 103, 158;
+  --card-shadow: 0, 0, 0;
+  --footer-background: 2, 6, 22;
+  --footer-text: 242, 249, 255;
+  --footer-muted: 143, 166, 195;
+  --footer-accent: 14, 204, 237;
+  --target-cursor: 14, 204, 237;
+  --target-label-background: 2, 8, 28;
 }
 
+html.theme-transitioning,
+html.theme-transitioning body,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition-property: background-color, background-image, border-color, color,
+    fill, stroke, outline-color, text-decoration-color, box-shadow, text-shadow,
+    filter !important;
+  transition-duration: 600ms !important;
+  transition-timing-function: ease-in-out !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-transitioning,
+  html.theme-transitioning body,
+  html.theme-transitioning *,
+  html.theme-transitioning *::before,
+  html.theme-transitioning *::after {
+    transition-duration: 0ms !important;
+  }
+}

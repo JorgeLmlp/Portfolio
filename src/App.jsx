@@ -1,55 +1,35 @@
-import './App.css';
-import MyHeader from './components/MYHeader';
-import homeImage from './assets/images/homeimage.png';
-import HomeText from './components/HomeText';
-import { FooterHome } from './components/FooterHome';
-import { Skills } from './components/Skills';
-import { Page2Title } from './components/Page2Title';
-import { AboutText } from './components/TextReveal';
-import ScrollFloat from './assets/animations/ScrollFloat/ScrollFloat';
-
-
-
+import "./App.css";
+import MyHeader from "./components/MYHeader";
+import HomeText from "./components/HomeText";
+import { FooterHome } from "./components/FooterHome";
+import { Skills } from "./components/Skills";
+import { AboutText } from "./components/TextReveal";
+import { SiteFooter } from "./components/SiteFooter";
+import { IntroLoader } from "./components/IntroLoader";
 
 function App() {
-  <Suspense fallback={<div>Loading...</div>}>
-  <ScrollFloat />
-</Suspense>
-  const page2Style = {
-    background: 'linear-gradient(180deg, rgb(var(--azul-medio)) 0%, rgb(var(--azure)) 100%)',
-  };
-
   return (
-    <div id='main'>
-      <div id='home' className='homeContainer'>
-        <MyHeader />
-        <HomeText />  
-        <div id='homeImage' className='absolute imagemhome flex align-middle justify-center w-full h-full'>
-          <img className='z-00 h-[80%]' src={homeImage} alt='home' />
-        </div>
+    <div id="main">
+      <IntroLoader />
+      <MyHeader />
+      <section id="home" className="homeContainer">
+        <HomeText />
         <FooterHome />
-      </div>
-      <div id='page2' className=' w-full h-[200vh] flex justify-center ' style={page2Style}>
-        <div id='page2Container'className='bg-gradient-to-b from-[rgb(var(--azul-medio))] to-[rgb(var(--azure))] w-[100%] h-full align-middle flex flex-col  items-center '>
-          <div className='w-full flex items-center justify-center align-middle'>
-          <Page2Title></Page2Title>
-          
-          </div>
-          <ScrollFloat></ScrollFloat>
-          <AboutText></AboutText>
-        </div>
-      </div>
+      </section>
 
-      <div id='page3' className='p-[20%]w-[100%] h-screen flex justify-center  bg-[rgba(var(--azure),1)]'>
-        <div id='page4'>
-        <Skills></Skills>
+      <section id="page2" className="about-section">
+        <div id="page2Container" className="about-container">
+          <AboutText />
         </div>
+      </section>
 
-       </div>
-       
+      <section id="page3" className="skills-section">
+        <div id="page4" className="skills-anchor">
+          <Skills />
+        </div>
+      </section>
+      <SiteFooter />
     </div>
-  
-
   );
 }
 

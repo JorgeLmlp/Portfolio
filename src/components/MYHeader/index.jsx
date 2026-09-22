@@ -1,56 +1,148 @@
-import './style.css'
-import Download from '../../assets/images/Download.png';
-import { SunIcon, MoonIcon } from '@radix-ui/react-icons';
-import { useState, useEffect } from 'react';
+import "./style.css";
+import Download from "../../assets/images/Download.png";
+import curriculumEnglish from "../../assets/curriculo_jorgeMoraes-EN.pdf";
+import curriculumPortuguese from "../../assets/Curriculo_Jorge_Moraes-ptbr.pdf";
+import { SunIcon, MoonIcon } from "@radix-ui/react-icons";
+import { useEffect, useRef, useState } from "react";
+import { useLanguage } from "../../context/languageContext";
 
 const MyHeader = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
+  const { language, copy, toggleLanguage } = useLanguage();
+  const curriculum =
+    language === "en" ? curriculumEnglish : curriculumPortuguese;
+  const curriculumFilename =
+    language === "en"
+      ? "Jorge_Moraes_Resume_EN.pdf"
+      : "Curriculo_Jorge_Moraes_PT-BR.pdf";
+  const themeTransitionTimer = useRef(null);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    return savedTheme ? savedTheme === "dark" : true;
+  });
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-      const container = document.getElementById('container')
-      container.style.backgroundColor = 'rgba(var(--azul-escuro),0.35)'
-    } else {
-      const container = document.getElementById('container')
-      document.documentElement.classList.remove('dark');
-      container.style.backgroundColor = 'rgba(var(--azul-escuro),0.35)'
-    }
+    document.documentElement.classList.toggle("dark", darkMode);
+    document.documentElement.style.colorScheme = darkMode ? "dark" : "light";
+    localStorage.setItem("portfolio-theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-  const handleCheckboxChange = (e) => {
-    setDarkMode(e.target.checked);
+  useEffect(
+    () => () => {
+      if (themeTransitionTimer.current)
+        window.clearTimeout(themeTransitionTimer.current);
+    },
+    [],
+  );
+
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    root.classList.add("theme-transitioning");
+    if (themeTransitionTimer.current)
+      window.clearTimeout(themeTransitionTimer.current);
+
+    setDarkMode((current) => !current);
+
+    themeTransitionTimer.current = window.setTimeout(() => {
+      root.classList.remove("theme-transitioning");
+    }, 650);
   };
 
-  return (
-    <header className="header w-[80%] P-[20%] h-[6vh] flex justify-center items-center bg-[rgba(var(--azul-escuro),1)] rounded-lg min-h-max max-h-full lg:w-80% fixed z-999 m-auto">
-      <div className='flex w-[60%] lg:text-[17px] justify-arround items-center xl:gap-5 md:gap-0'>
-        <a href="#" className='text-gray-500 lg:text-[17px] text-[20px] hover:text-[rgba(var(--texto),1)] p-px w-[150px] text-center rounded-xl'>HOME</a>
-        <a href="#page2" className='text-[20px] md:text-[17px] hover:text-[rgba(var(--texto),1)] text-gray-500 transition duration-200 p-px w-[150px] text-center rounded-xl'>ABOUT ME</a>
-        <a href="#page4" className='text-[20px] lg:text-[17px] hover:text-[rgba(var(--texto),1)] text-gray-500 transition duration-200 p-px w-[150px] text-center rounded-xl '>SKILLS</a>
-        <a href="mailto:jorgelmlp2@gmail.com" className='text-[17px] hover:text-[rgba(var(--texto),1)] text-gray-500 transition duration-200 p-px w-[150px] text-center rounded-xl'>CONTACT</a>
-      
-      <div className='w-[20%] flex items-end  justify-around'>
+  useEffect(() => {
+    const footer = document.querySelector(".site-footer");
+    const header = document.querySelector(".header");
+    if (!footer || !header) return undefined;
 
-      <div id='container' className='ModeContainer flex w-[30%] h-[80%] items-center justify-center border-white border-2 rounded-full'>
-          <input
-            id="checkbox"
-            type="checkbox"
-            checked={darkMode}
-            onChange={handleCheckboxChange}
-            className="absolute opacity-0 w-[30px] h-full z-10 cursor-pointer"
-            />
-          <span className="relative inset-0 flex items-center justify-center text-white pointer-events-none z-9">
-            {darkMode ? <SunIcon className="ModeIcon text-white-100 w-[30px] h-10" /> : <MoonIcon className="ModeIcon text-white-100 w-[30px] h-10" />}
+    let frameId = null;
+    let headerBottom = 0;
+
+    const measureHeader = () => {
+      const top = Number.parseFloat(window.getComputedStyle(header).top) || 0;
+      headerBottom = top + header.offsetHeight;
+    };
+
+    const updateVisibility = () => {
+      frameId = null;
+      const reachedFooter = footer.getBoundingClientRect().top <= headerBottom;
+      setIsFooterVisible(reachedFooter);
+    };
+
+    const requestUpdate = () => {
+      if (frameId === null)
+        frameId = window.requestAnimationFrame(updateVisibility);
+    };
+
+    const handleResize = () => {
+      measureHeader();
+      requestUpdate();
+    };
+
+    measureHeader();
+    updateVisibility();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return (
+    <header
+      className={`header${isFooterVisible ? " header--hidden" : ""}`}
+      aria-hidden={isFooterVisible}
+    >
+      <nav
+        className="header-nav"
+        aria-label={
+          language === "en" ? "Main navigation" : "Navegação principal"
+        }
+      >
+        <a href="#home">{copy.nav.home}</a>
+        <a href="#page2">{copy.nav.about}</a>
+        <a href="#page4">{copy.nav.skills}</a>
+        <a href="mailto:jorgelmlp2@gmail.com">{copy.nav.contact}</a>
+      </nav>
+
+      <div className="header-actions">
+        <button
+          className="theme-toggle"
+          type="button"
+          onClick={toggleTheme}
+          aria-pressed={darkMode}
+          aria-label={darkMode ? copy.theme.light : copy.theme.dark}
+          title={darkMode ? copy.theme.light : copy.theme.dark}
+        >
+          <span
+            className="theme-toggle-icon"
+            key={darkMode ? "sun" : "moon"}
+          >
+            {darkMode ? <SunIcon /> : <MoonIcon />}
           </span>
-        
-      </div>
-      </div>
-        <a id='CV' className='DownloadCV text-white justify-around flex bg-[rgba(var(--azure),1)] rounded-lg w-[140px] p-1.5' href="../../assets/files/CV_Jorge_Lima.pdf" download = "CV_Jorge_Lima.pdf">
-          MY CV <img className='CVimg ml-1' src={Download} alt="download" />
+        </button>
+
+        <button
+          className="language-toggle"
+          type="button"
+          onClick={toggleLanguage}
+          aria-label={copy.languageLabel}
+          title={copy.languageLabel}
+        >
+          <span className={language === "en" ? "active" : ""}>EN</span>
+          <span className={language === "pt" ? "active" : ""}>PT</span>
+        </button>
+
+        <a
+          id="CV"
+          className="DownloadCV"
+          href={curriculum}
+          download={curriculumFilename}
+        >
+          {copy.nav.resume} <img className="CVimg" src={Download} alt="" />
         </a>
-            </div>
+      </div>
     </header>
   );
 };
