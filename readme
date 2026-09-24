@@ -2,36 +2,5 @@
 
 Portfolio desenvolvido com React, Vite e Tailwind CSS.
 
-## Desenvolvimento local
-
-```bash
-npm install
-npm run dev
-```
-
-## Publicar no GitHub Pages
-
-Na primeira publicação, execute:
-
-```bash
-npm install
-npm run deploy
-```
-
-O comando valida o projeto, gera um novo build e publica a pasta `dist` na
-branch `gh-pages`.
-
-Depois, acesse **Settings > Pages** no repositório e configure:
-
-- **Source:** Deploy from a branch
-- **Branch:** `gh-pages`
-- **Folder:** `/ (root)`
-
-Nas próximas atualizações, faça o commit das alterações na `main` e execute
-novamente:
-
-```bash
-npm run deploy
-```
 
 Site: https://jorgelmlp.github.io/Portfolio/
