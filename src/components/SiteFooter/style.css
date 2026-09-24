@@ -100,12 +100,34 @@
 }
 
 @media (max-width: 600px) {
-  .footer-links {
-    justify-content: start;
-    gap: 2rem;
+  .site-footer {
+    padding-block: 4rem 2.5rem;
   }
+
+  .footer-cta h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(2.35rem, 12vw, 4rem);
+    letter-spacing: -0.055em;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: start;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    max-width: 100%;
+  }
+
   .footer-bottom {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 340px) {
+  .footer-links {
+    grid-template-columns: 1fr;
   }
 }

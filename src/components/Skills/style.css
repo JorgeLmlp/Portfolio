@@ -59,7 +59,21 @@
   }
 }
 @media (max-width: 430px) {
+  .skills-panel {
+    padding: 1rem;
+    border-radius: 22px;
+  }
+
+  .skills-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .blackfuture3 {
+    font-size: clamp(2.8rem, 17vw, 4rem);
+  }
+
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
   }
 }

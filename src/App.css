@@ -21,6 +21,7 @@ section[id],
 body {
   min-width: 320px;
   margin: 0;
+  overflow-x: hidden;
   background: rgb(var(--page-background));
   color: rgb(var(--texto));
   transition:
@@ -89,11 +90,7 @@ body {
 .about-section {
   display: flex;
   justify-content: center;
-  background: linear-gradient(
-    180deg,
-    rgb(var(--section-start)),
-    rgb(var(--section-end))
-  );
+  background: linear-gradient(180deg, rgb(var(--section-start)), rgb(var(--section-end)));
   transition: background 450ms ease;
 }
 
@@ -114,6 +111,17 @@ body {
 
 .skills-anchor {
   width: min(1180px, calc(100% - 2rem));
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    min-height: auto;
+    padding: 4.5rem 0;
+  }
+
+  .skills-anchor {
+    width: min(100% - 1rem, 1180px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

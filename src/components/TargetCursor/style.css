@@ -124,3 +124,9 @@
 .skills-section.skills-cursor-active * {
   cursor: none !important;
 }
+
+@media (hover: none), (pointer: coarse) {
+  .skills-target-cursor {
+    display: none;
+  }
+}

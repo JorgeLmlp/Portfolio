@@ -5,8 +5,7 @@
   width: min(1280px, 100%);
   min-height: 100svh;
   align-items: center;
-  padding: clamp(7rem, 11vh, 9rem) clamp(1.25rem, 6vw, 5rem)
-    clamp(6.5rem, 10vh, 8rem);
+  padding: clamp(7rem, 11vh, 9rem) clamp(1.25rem, 6vw, 5rem) clamp(6.5rem, 10vh, 8rem);
 }
 
 .home-tech-grid {
@@ -69,10 +68,7 @@
 .home-presentation {
   display: grid;
   align-items: stretch;
-  grid-template-columns: minmax(0, 1fr) clamp(150px, 16vw, 210px) minmax(
-      285px,
-      0.72fr
-    );
+  grid-template-columns: minmax(0, 1fr) clamp(150px, 16vw, 210px) minmax(285px, 0.72fr);
   gap: clamp(1rem, 2.2vw, 2rem);
   margin-top: clamp(2rem, 4.5vh, 3.5rem);
 }
@@ -176,11 +172,7 @@
   overflow: hidden;
   border-radius: 50%;
   background:
-    radial-gradient(
-      circle at 50% 28%,
-      rgba(var(--azul-claro), 0.28),
-      transparent 58%
-    ),
+    radial-gradient(circle at 50% 28%, rgba(var(--azul-claro), 0.28), transparent 58%),
     rgb(var(--portrait-surface));
 }
 
@@ -331,7 +323,8 @@
 
 @media (max-width: 640px) {
   .home-copy {
-    padding: 6.5rem 1rem 7rem;
+    align-items: flex-start;
+    padding: 6.25rem 1rem 7rem;
   }
 
   .home-tech-grid {
@@ -340,8 +333,9 @@
   }
 
   .blackfuture {
-    font-size: clamp(3.5rem, 18vw, 6.2rem);
+    font-size: clamp(3rem, 15.5vw, 5.4rem);
     line-height: 0.9;
+    letter-spacing: -0.025em;
   }
 
   .home-presentation {
@@ -360,6 +354,58 @@
     flex-wrap: wrap;
     gap: 0.55rem;
     letter-spacing: 0.1em;
+  }
+
+  .home-terminal-code p {
+    grid-template-columns: 3.6rem minmax(0, 1fr);
+  }
+
+  .home-terminal-code strong {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-availability {
+    align-items: flex-start;
+    font-size: 0.58rem;
+    line-height: 1.35;
+  }
+
+  .home-presentation {
+    gap: 1.5rem;
+    margin-top: 1.6rem;
+  }
+
+  .home-summary {
+    gap: 1.25rem;
+  }
+
+  .home-summary > p {
+    font-size: 0.98rem;
+  }
+
+  .home-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .home-actions a {
+    min-width: 0;
+    padding-inline: 0.65rem;
+    font-size: 0.59rem;
+    letter-spacing: 0.07em;
+    text-align: center;
+  }
+
+  .home-portrait {
+    width: min(190px, 62vw);
+  }
+
+  .home-terminal-code {
+    gap: 0.8rem;
+    padding: 1rem;
   }
 }
 
