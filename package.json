@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/JorgeLmlp/Portfolio",
+  "homepage": "https://jorgelmlp.github.io/Portfolio/",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -12,8 +12,8 @@
     "format:check": "prettier --check .",
     "preview": "vite preview",
     "tailwind:init": "tailwindcss init -p",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run lint && npm run build",
+    "deploy": "gh-pages -d dist --nojekyll"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

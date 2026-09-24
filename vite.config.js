@@ -8,7 +8,7 @@ const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/Portfolio",
+  base: "/Portfolio/",
   resolve: {
     alias: {
       "@": path.resolve(currentDirectory, "./src"),
